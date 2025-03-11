@@ -1,0 +1,122 @@
+*{
+    padding:0;                          /* to remove the unwanted padding and margin initally */
+    margin: 0;
+    font-family: "Poppins", sans-serif; /* Add font size to the whole page */
+}
+.main_box{
+    background-image: url("photo.jpg") ;
+    height: 100vh;                      /* 100vh = view port complete picture to display on the window ( relative unit) */
+background-size: cover;
+}
+.btn_one i{
+    color: rgb(245, 238, 238);
+    font-size:30px;
+    font-weight: 700;
+position: absolute;                         /* Abs position is the relative to the parent position that is side bar menu*/
+left: 16px ;
+line-height: 60px;                               /* This is the font size */
+cursor: pointer;                                 /* here it will not work because there is two layer */
+transition: 0.3s;                              /* for 0.3s font size is increased*/
+}
+.sidebar_menu{
+    position: fixed;
+left :-300px;                                  /* Left side outside the page*/
+height: 100vh;
+width: 300px;
+background-color: rgba(255, 255, 255, 0.1);
+box-shadow: 0 0 6px rgb(255 ,255 ,255, 0.5);                /* This gives the background shadow to the sidebar menu*/
+transition: all 1s ease-in;                                 /* 1s time will be take when the sidebar come to the main page*/
+}
+
+.sidebar_menu .logo{                    /* dot will remain witht the logo because logo is in side_menu class */
+    position: absolute;
+    height:60px;
+line-height:60px ;
+    width: 100%;
+    box-shadow: 0 2px 4px rgb(255 ,255 ,255, 0.5);
+}
+.sidebar_menu .logo a{                  /*  and also there is space between the logo and anchor tag "a" dot
+                                                            will remain witht the logo because logo is in side_menu class */
+    position: absolute;
+    left: 58px;
+    color: white;
+    text-decoration: none;                        /* To remove the underline on the word aona collage */
+font-size:20px ;
+font-weight: bold;
+}
+.sidebar_menu .btn_two i {
+    color: gray;
+font-size:25px;
+    font-weight: 700;
+    line-height: 60px;                                    /* This is the font size */
+    position: absolute;
+    left: 265px;
+    /*opacity: 0;*/                      /* the cross button will disappeared because we want to add the fuction of the check box*/
+    cursor:pointer ;                    /*This is use to put hand symbol */
+    transition: 0.3s;                   /* for 0.3s font size is increased*/
+}
+.sidebar_menu .menu{
+    color: white;
+    position: absolute;
+    width: 100%;
+    top:80px;
+}
+
+.sidebar_menu .menu li{
+    margin-top: 6px;
+padding: 15px 20px;                       /* The distance is from top and bottom is 15px and  left and right is 20px*/
+
+}
+
+.sidebar_menu .menu i,a{              /* This is for the both icon and the anchor tag */
+color: wheat;
+text-decoration: none;
+font-size: 20px;
+}
+.sidebar_menu .menu i{                 /* This is for to put the padding for the icon*/
+padding-right:8px ;
+}
+.sidebar_menu .social_media{
+
+position: absolute;
+left: 25%;
+bottom: 55px;
+}
+.sidebar_menu .social_media i{
+    color: gray;
+    padding: 0px 5px;
+
+}
+#check{                          /*For check box whose "Check" is the id , here check box become hide when we set display == none*/
+display: none;
+}
+
+.sidebar_menu .menu li:hover{           /*inside the menue in the list items if we do the hover then we get a box shadow*/
+    box-shadow: 0 0 4px rgb(255 ,255 ,255, 0.5);
+}
+
+.btn_one i:hover{
+font-size: 50px;
+}
+.btn_two i:hover{
+    font-size: 35px;
+}
+
+.sidebar_menu i:hover{
+color: white;
+transform: scale(1.25);                 /* When we do hover our icon size becomes 1.25 times larger */
+}
+
+                                    /*Now the main part of the project here we will control the buttons here we will the condition on the check box
+                                    When we click on btn_one or btn_two the check box will perform accordingly chacked or unchecked*/
+
+
+#check:checked ~ .sidebar_menu{                 /* When check box is checked then we will go to the siblings section(that is btn_one, Sidebar_menu) */
+                                                      /* ~ this is a tild selector */
+left : 0;                                      /*Actually when we click on the lable of the check box then check box is checked then left position becomes ==0 from side bar menu*/
+}                                              /*When we click on the cross button the check box is unchecked and position is shifted to the -300 or left side of the page*/
+
+#check:checked ~ .btn_one i{                   /*When we click on the hamburger button it will checked then it will disappear because opacity==0*/
+opacity:0;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
